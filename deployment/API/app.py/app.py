@@ -36,15 +36,13 @@ async def load_model():
 
 
     chatbot = ChatbotInference(model_path, device=DEVICE)
-    print(f"✅ Model loaded successfully on {DEVICE}")
+    print(f"Model loaded successfully on {DEVICE}")
 
 
 
 @app.post("/chat")
 async def chat_endpoint(data: ChatInput):
-    """
-    Receives text, feeds it to the model, and returns the response.
-    """
+
     if chatbot is None:
         raise HTTPException(status_code=503, detail="Model is not loaded yet.")
 
