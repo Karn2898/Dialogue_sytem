@@ -6,7 +6,7 @@ API_URL = "http://127.0.0.1:8000/chat"
 
 
 st.set_page_config(page_title=" AI Chatbot", page_icon="🤖")
-st.title("🤖 My Deep Learning Chatbot")
+st.title(" My Deep Learning Chatbot")
 st.write("Ask me anything! I'm running on a custom PyTorch model.")
 
 
