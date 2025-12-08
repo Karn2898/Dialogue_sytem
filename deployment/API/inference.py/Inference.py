@@ -1,12 +1,4 @@
 
-import torch
-from main.models.encoder import EncoderRNN
-from main.models.decoder import LuongAttnDecoderRNN
-from main.evaluation.evaluate import GreedySearchDecoder
-from main.evaluation.beam_search import BeamSearchDecoder
-from main.utils.vocabulary import Vocabulary
-from main.utils.load_data import normalizeString
-from config import PAD_TOKEN, SOS_TOKEN, EOS_TOKEN, MAX_LENGTH
 
 
 class ChatbotInference:

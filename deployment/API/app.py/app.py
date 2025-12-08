@@ -1,8 +1,4 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-import sys
-import os
-import torch
+
 
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
@@ -57,3 +53,10 @@ async def chat_endpoint(data: ChatInput):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
+@app.on_event("startup")
+async def load_model():
+    global chatbot
+
+    model_path = "save/model/best_model.pth"
+    chatbot = ChatbotInference(model_path, device=DEVICE)
